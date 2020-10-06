@@ -11,5 +11,5 @@ RUN mkdir -p /backup
 ADD s3cmd.cfg /root/.s3cfg
 ADD run.sh /
 
-ENTRYPOINT ["/run.sh"]
-CMD ["start"]
+#ENTRYPOINT ["/run.sh"]
+#CMD ["start"]
