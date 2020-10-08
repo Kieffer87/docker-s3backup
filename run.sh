@@ -32,7 +32,7 @@ if [[ $OPTION = "start" ]]; then
   chmod 600 /root/.s3cfg
 
   echo "Running backup on the following CRON schedule: $CRON_SCHEDULE"
-  echo "$CRON_SCHEDULE root bash /run.sh backup" | crontab - && crond -f -L /dev/stdout
+  echo "$CRON_SCHEDULE bash /run.sh backup" | crontab - && crond -f -L /dev/stdout
 
 elif [[ $OPTION = "backup" ]]; then
   echo "Starting sync: $(date)" | tee $LOG
