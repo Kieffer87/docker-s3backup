@@ -26,13 +26,13 @@ if [[ $OPTION = "start" ]]; then
   ls -F /backup
   echo
 
-  if grep -Fxq "$ACCESS_KEY" /root/.s3cfg; then
+  if grep -Fq "$ACCESS_KEY" /root/.s3cfg; then
     echo "ACCESS_KEY already exists in /root/s3cfg"
   else
     sed -i 's@access_key =@access_key = '"$ACCESS_KEY"'@g' /root/.s3cfg
   fi
   
-  if grep -Fxq "$SECRET_KEY" /root/.s3cfg; then
+  if grep -Fq "$SECRET_KEY" /root/.s3cfg; then
     echo "SECRET_KEY already exists in /root/s3cfg"
   else
     sed -i 's@secret_key =@secret_key = '"$SECRET_KEY"'@g' /root/.s3cfg
